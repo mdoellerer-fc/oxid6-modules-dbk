@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<OX>
+    <OXMENU id="NAVIGATION_ESHOPADMIN">
+        <MAINMENU id="mxmdo">
+            <SUBMENU id="admin_log" cl="AdminLogAdminList">
+            </SUBMENU>
+            <SUBMENU id="ox_admin_log" cl="OxAdminLogController">
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>

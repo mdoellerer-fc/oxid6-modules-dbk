@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<OX>
+    <OXMENU id="NAVIGATION_ESHOPADMIN">
+        <MAINMENU id="mxmdo">
+            <SUBMENU id="syseleven_maintenance" cl="SyselevenMaintenance">
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>
