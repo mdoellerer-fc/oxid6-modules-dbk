@@ -22,7 +22,7 @@
 <div id="liste">
 
     <form name="search" id="search" action="[{ $oViewConf->getSelfLink() }]" method="post">
-        [{include file="_formparams.tpl" cl="AdminLogAdminList" lstrt=$lstrt actedit=$actedit oxid=$oxid fnc="" language=$actlang editlanguage=$actlang}]
+        [{include file="_formparams.tpl" cl="ConfigLogAdminList" lstrt=$lstrt actedit=$actedit oxid=$oxid fnc="" language=$actlang editlanguage=$actlang}]
         <table cellspacing="0" cellpadding="0" border="0" width="100%">
             <colgroup>
                 [{block name="admin_usergroup_list_colgroup"}]
@@ -30,14 +30,14 @@
                 [{/block}]
             </colgroup>
             <tr class="listitem">
-                [{block name="admin_mdo_admin_log_list_filter"}]
+                [{block name="admin_mdo_config_log_list_filter"}]
                 <td valign="top" class="listfilter first" height="20">
                     <div class="r1">
                         <div class="b1">
                             <div class="find">
                                 <input class="listedit" type="submit" name="submitit" value="[{ oxmultilang ident="GENERAL_SEARCH" }]">
                             </div>
-                            <input class="listedit" type="text" size="16" maxlength="12" name="where[mdo_admin_log][setting_name]" value="[{ $where.mdo_admin_log.setting_name }]">
+                            <input class="listedit" type="text" size="16" maxlength="12" name="where[mdo_config_log][setting_name]" value="[{ $where.mdo_config_log.setting_name }]">
                         </div>
                     </div>
                 </td>
@@ -47,7 +47,7 @@
                             <div class="find">
                                 <input class="listedit" type="submit" name="submitit" value="[{ oxmultilang ident="GENERAL_SEARCH" }]">
                             </div>
-                        <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_admin_log][old_value]" value="[{ $where.mdo_admin_log.old_value }]">
+                        <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_config_log][old_value]" value="[{ $where.mdo_config_log.old_value }]">
                         </div>
                     </div>
                 </td>
@@ -57,7 +57,7 @@
                             <div class="find">
                                 <input class="listedit" type="submit" name="submitit" value="[{ oxmultilang ident="GENERAL_SEARCH" }]">
                             </div>
-                            <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_admin_log][new_value]" value="[{ $where.mdo_admin_log.new_value }]">
+                            <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_config_log][new_value]" value="[{ $where.mdo_config_log.new_value }]">
                         </div>
                     </div>
                 </td>
@@ -67,7 +67,7 @@
                             <div class="find">
                                 <input class="listedit" type="submit" name="submitit" value="[{ oxmultilang ident="GENERAL_SEARCH" }]">
                             </div>
-                            <input class="listedit" type="text" size="16" maxlength="12" name="where[mdo_admin_log][time_of_change]" value="[{ $where.mdo_admin_log.time_of_change }]">
+                            <input class="listedit" type="text" size="16" maxlength="12" name="where[mdo_config_log][time_of_change]" value="[{ $where.mdo_config_log.time_of_change }]">
                         </div>
                     </div>
                 </td>
@@ -77,7 +77,7 @@
                             <div class="find">
                                 <input class="listedit" type="submit" name="submitit" value="[{ oxmultilang ident="GENERAL_SEARCH" }]">
                             </div>
-                            <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_admin_log][user_responsible]" value="[{ $where.mdo_admin_log.user_responsible }]">
+                            <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_config_log][user_responsible]" value="[{ $where.mdo_config_log.user_responsible }]">
                         </div>
                     </div>
                 </td>
@@ -87,7 +87,7 @@
                             <div class="find">
                                 <input class="listedit" type="submit" name="submitit" value="[{ oxmultilang ident="GENERAL_SEARCH" }]">
                             </div>
-                            <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_admin_log][domain]" value="[{ $where.mdo_admin_log.domain }]">
+                            <input class="listedit" type="text" size="16" maxlength="100" name="where[mdo_config_log][domain]" value="[{ $where.mdo_config_log.domain }]">
                         </div>
                     </div>
                 </td>
@@ -97,14 +97,14 @@
             </tr>
 
             <tr>
-                [{block name="admin_mdo_admin_log_list_sorting"}]
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'setting_name', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_setting_name" }]</a></td>
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'old_value', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_old_value" }]</a></td>
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'new_value', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_new_value" }]</a></td>
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'time_of_change', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_time_of_change" }]</a></td>
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'user_responsible', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_user_responsible" }]</a></td>
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'domain', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_domain" }]</a></td>
-                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_admin_log', 'path', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_admin_log_path" }]</a></td>
+                [{block name="admin_mdo_config_log_list_sorting"}]
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'setting_name', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_setting_name" }]</a></td>
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'old_value', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_old_value" }]</a></td>
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'new_value', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_new_value" }]</a></td>
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'time_of_change', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_time_of_change" }]</a></td>
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'user_responsible', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_user_responsible" }]</a></td>
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'domain', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_domain" }]</a></td>
+                <td class="listheader first" height="15"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'mdo_config_log', 'path', 'asc');document.search.submit();" class="listheader">[{ oxmultilang ident="mdo_config_log_path" }]</a></td>
                 [{/block}]
             </tr>
 
@@ -113,7 +113,7 @@
             [{foreach from=$mylist item=listitem}]
             [{assign var="_cnt" value=$_cnt+1}]
             <tr id="row.[{$_cnt}]">
-                [{block name="admin_mdo_admin_log_list_item"}]
+                [{block name="admin_mdo_config_log_list_item"}]
                 [{if $listitem->blacklist == 1}]
                 [{assign var="listclass" value=listitem3 }]
                 [{else}]
@@ -122,13 +122,13 @@
                 [{if $listitem->getId() == $oxid }]
                 [{assign var="listclass" value=listitem4 }]
                 [{/if}]
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__setting_name->value }]</a></div></td>
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__old_value->value }]</a></div></td>
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__new_value->value }]</a></div></td>
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__time_of_change->value }]</a></div></td>
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__user_responsible->value }]</a></div></td>
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__domain->value }]</a></div></td>
-                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_admin_log__path->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__setting_name->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__old_value->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__new_value->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__time_of_change->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__user_responsible->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__domain->value }]</a></div></td>
+                <td valign="top" class="[{ $listclass}]" height="15"><div class="listitemfloating"><a class="[{ $listclass}]">[{ $listitem->mdo_config_log__path->value }]</a></div></td>
 
                 </td>
                 [{/block}]
