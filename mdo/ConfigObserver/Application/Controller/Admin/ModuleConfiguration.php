@@ -1,10 +1,10 @@
 <?php
 
 
-namespace mdo\Admin\Application\Controller\Admin;
+namespace mdo\ConfigObserver\Application\Controller\Admin;
 
 
-use mdo\Admin\Core\SendEmail;
+use mdo\ConfigObserver\Core\SendEmail;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\EshopCommunity\Internal\Framework\Module\Configuration\Bridge\ModuleConfigurationDaoBridgeInterface;
 

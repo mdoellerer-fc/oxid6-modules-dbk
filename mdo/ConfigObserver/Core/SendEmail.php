@@ -1,10 +1,10 @@
 <?php
 
 
-namespace mdo\Admin\Core;
+namespace mdo\ConfigObserver\Core;
 
 
-use mdo\Admin\Application\Model\Admin\AdminLog;
+use mdo\ConfigObserver\Application\Model\Admin\ConfigLog;
 use OxidEsales\Eshop\Core\Field;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Core\UniversallyUniqueIdGenerator;
@@ -69,7 +69,7 @@ class SendEmail extends SendEmail_parent
         if (empty($this->moduleId)){
             return false;
         }
-        $emailRecipient = Registry::getConfig()->getConfigParam('sMdoAdminEmailRecipient');
+        $emailRecipient = Registry::getConfig()->getConfigParam('sMdoConfigObserverEmailRecipient');
 
         if (!filter_var($emailRecipient, FILTER_VALIDATE_EMAIL)){
             return false;
@@ -88,17 +88,17 @@ class SendEmail extends SendEmail_parent
     }
 
     private function logDifferences($key){
-        $adminLog = oxNew(AdminLog::class);
+        $adminLog = oxNew(ConfigLog::class);
         $idGen = oxNew(UniversallyUniqueIdGenerator::class);
 
-        $adminLog->mdo_admin_log__oxid              = new Field($idGen->generate());
-        $adminLog->mdo_admin_log__setting_name      = new Field($key);
-        $adminLog->mdo_admin_log__old_value         = new Field($this->oldSettings[$key]);
-        $adminLog->mdo_admin_log__new_value         = new Field($this->changedSettings[$key]);
-        $adminLog->mdo_admin_log__time_of_change    = new Field(date('Y-m-d H:i:s'));
-        $adminLog->mdo_admin_log__user_responsible  = new Field($this->userResponsible);
-        $adminLog->mdo_admin_log__path              = new Field($this->path);
-        $adminLog->mdo_admin_log__domain            = new Field($this->domain);
+        $adminLog->mdo_config_log__oxid              = new Field($idGen->generate());
+        $adminLog->mdo_config_log__setting_name      = new Field($key);
+        $adminLog->mdo_config_log__old_value         = new Field($this->oldSettings[$key]);
+        $adminLog->mdo_config_log__new_value         = new Field($this->changedSettings[$key]);
+        $adminLog->mdo_config_log__time_of_change    = new Field(date('Y-m-d H:i:s'));
+        $adminLog->mdo_config_log__user_responsible  = new Field($this->userResponsible);
+        $adminLog->mdo_config_log__path              = new Field($this->path);
+        $adminLog->mdo_config_log__domain            = new Field($this->domain);
         $adminLog->save();
     }
 }

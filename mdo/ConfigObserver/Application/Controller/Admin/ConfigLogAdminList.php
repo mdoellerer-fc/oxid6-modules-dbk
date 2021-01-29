@@ -1,21 +1,21 @@
 <?php
 
-namespace mdo\Admin\Application\Controller\Admin;
+namespace mdo\ConfigObserver\Application\Controller\Admin;
 
-use mdo\Admin\Application\Model\Admin\AdminLog;
-use mdo\Admin\Application\Model\Admin\AdminLogList;
+use mdo\ConfigObserver\Application\Model\Admin\ConfigLog;
+use mdo\ConfigObserver\Application\Model\Admin\ConfigLogList;
 use OxidEsales\Eshop\Application\Controller\Admin\AdminListController;
 
-class AdminLogAdminList extends AdminListController
+class ConfigLogAdminList extends AdminListController
 {
     /**
      * @var string
      */
-    protected $_sListClass = AdminLog::class;
+    protected $_sListClass = ConfigLog::class;
     /**
      * @var string
      */
-    protected $_sListType = AdminLogList::class;
+    protected $_sListType = ConfigLogList::class;
 
 
     public function __construct()
@@ -38,7 +38,7 @@ class AdminLogAdminList extends AdminListController
     public function render()
     {
         parent::render();
-        $_sThisTemplate = 'AdminLogAdminList.tpl';
+        $_sThisTemplate = 'ConfigLogAdminList.tpl';
 
         return $_sThisTemplate;
     }
